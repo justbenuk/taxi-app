@@ -1,3 +1,4 @@
+import SiteMenuList from "../menus/site-menu-list";
 import Pagecontainer from "../shared/page-container";
 import SiteLogo from "../shared/site-logo";
 
@@ -7,7 +8,7 @@ export default function Header() {
       <Pagecontainer>
         <div className="flex flex-row items-center justify-between">
           <SiteLogo />
-          <nav>nav</nav>
+          <SiteMenuList />
         </div>
       </Pagecontainer>
     </header>

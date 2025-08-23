@@ -44,7 +44,11 @@ export async function loginUserAction(data: z.infer<typeof LoginUserSchema>) {
   try {
     //validate the form with zod
     const validated = LoginUserSchema.parse(data)
+
+    //send the credentials to authjs
     await signIn('credentials', validated)
+
+    //return a success if logged in
     return { success: true, message: 'User Logged In' }
   } catch (error) {
     if (isRedirectError(error)) throw error
@@ -54,7 +58,15 @@ export async function loginUserAction(data: z.infer<typeof LoginUserSchema>) {
 }
 
 export async function isLoggedIn() {
+  //get the current users session
   const session = await auth()
+
+  //if there is no session return out
   if (!session) return null
   redirect('/dashboard')
+}
+
+export async function isAdmin() {
+  const session = await auth()
+  if (!session) redirect('/login')
 }

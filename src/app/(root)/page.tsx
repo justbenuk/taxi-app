@@ -1,6 +1,13 @@
+import { getAllHeros } from "@/actions/hero-actions";
+import HeroSection from "@/components/hero/hero-section";
 
-export default function Home() {
+export default async function Home() {
+
+  const allHeros = await getAllHeros()
+
   return (
-    <div>this is the home page</div>
+    <>
+      <HeroSection heroItems={allHeros} />
+    </>
   )
 }
