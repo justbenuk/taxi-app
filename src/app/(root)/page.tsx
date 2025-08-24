@@ -75,8 +75,8 @@ export default async function Home() {
                 <div className="flex flex-col items-center justify-center">
                   <Image src={"/assets/skoda.png"} alt="skoda" height={400} width={400} className="pb-6" />
                   <p className="text-center">
-                    Arrive in comfort and style in one of our saloon cars, which can accommodate up to four passengers. With a fleet of small to medium-sized vehicles, you'll have
-                    plenty of space for everything from luggage to shopping bags.
+                    Arrive in comfort and style in one of our saloon cars, which can accommodate up to four passengers. With a fleet of small to medium-sized vehicles, you&apos;ll
+                    have plenty of space for everything from luggage to shopping bags.
                   </p>
                 </div>
               </CardContent>
