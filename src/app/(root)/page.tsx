@@ -1,6 +1,5 @@
 import { getAllHeros } from "@/actions/hero-actions";
 import HeroSection from "@/components/hero/hero-section";
-import { ReviewList } from "@/components/reveiws/reviews";
 import PageContainer from "@/components/shared/page-container";
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { IconDeviceIpadPin, IconDeviceDesktopCode, IconMessages } from "@tabler/icons-react";
