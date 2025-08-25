@@ -30,7 +30,7 @@ export default function HeroSection({ heroItems }: { heroItems: HeroItemProps[] 
           className="rounded-2xl text-xl h-[50dvh]"
           style={{ backgroundImage: `url('${hero.image}')`, backgroundPosition: "center", backgroundSize: "cover", width: "100%" }}
         >
-          <div className="bg-black/90 h-full rounded-2xl overflow-hidden">
+          <div className="bg-black/80 h-full rounded-2xl overflow-hidden">
             <Pagecontainer className="h-full overflow-hidden">
               <div className="flex flex-col items-start justify-center h-full space-y-6">
                 <h3 className="font-semibold text-sm text-yellow-500 dark:text-yellow-300 uppercase">{hero.title}</h3>

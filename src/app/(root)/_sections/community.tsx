@@ -2,6 +2,8 @@ import PageContainer from "@/components/shared/page-container";
 import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import Link from "next/link";
 import React from "react";
+import { POSTLIST } from "@/data/post-list";
+import Image from "next/image";
 
 export default function CommunitySection() {
   return (
@@ -15,57 +17,29 @@ export default function CommunitySection() {
         </p>
       </div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-10 mb-20">
-        <Card>
-          <CardHeader>
-            <CardTitle>Blog Title</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div>image</div>
-            <div>post content</div>
-          </CardContent>
-          <CardFooter>
-            <div className="flex flex-row justify-between items-center w-full">
-              <h3 className="text-muted-foreground">Date</h3>
-              <Link href={"/"} className="text-yellow-500 dark:text-yellow-300">
-                Read More
-              </Link>
-            </div>
-          </CardFooter>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Blog Title</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div>image</div>
-            <div>post content</div>
-          </CardContent>
-          <CardFooter>
-            <div className="flex flex-row justify-between items-center w-full">
-              <h3 className="text-muted-foreground">Date</h3>
-              <Link href={"/"} className="text-yellow-500 dark:text-yellow-300">
-                Read More
-              </Link>
-            </div>
-          </CardFooter>
-        </Card>
-        <Card>
-          <CardHeader>
-            <CardTitle>Blog Title</CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div>image</div>
-            <div>post content</div>
-          </CardContent>
-          <CardFooter>
-            <div className="flex flex-row justify-between items-center w-full">
-              <h3 className="text-muted-foreground">Date</h3>
-              <Link href={"/"} className="text-yellow-500 dark:text-yellow-300">
-                Read More
-              </Link>
-            </div>
-          </CardFooter>
-        </Card>
+        {POSTLIST.map((post) => (
+          <Card key={post.id} className="bg-muted">
+            <CardHeader>
+              <CardTitle>{post.title}</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div>
+                <Image src={post.image} alt={post.title} width={400} height={400} className="rounded-xl h-[250px] w-full" />
+              </div>
+              <div className="mt-4">{post.content.slice(0, 200)}...</div>
+            </CardContent>
+            <CardFooter>
+              <div className="flex flex-row justify-between items-center w-full">
+                <h3 className="text-muted-foreground text-xs">
+                  {post.createdAt} by {post.postedBy}
+                </h3>
+                <Link href={"/"} className="text-yellow-500 dark:text-yellow-300">
+                  Read More
+                </Link>
+              </div>
+            </CardFooter>
+          </Card>
+        ))}
       </div>
     </PageContainer>
   );

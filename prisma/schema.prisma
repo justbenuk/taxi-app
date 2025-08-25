@@ -96,3 +96,11 @@ model Hero {
   buttonLink String?
   buttonText String?
 }
+
+model Message {
+  id      String  @id @default(cuid())
+  name    String
+  email   String
+  phone   String?
+  message String
+}

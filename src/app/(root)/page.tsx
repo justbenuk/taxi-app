@@ -6,6 +6,7 @@ import WorkForUs from "./_sections/work-for-us";
 import CommunitySection from "./_sections/community";
 import { Suspense } from "react";
 import HeroSkeleton from "@/components/skeletons/hero-skeleton";
+import FrontContact from "./_sections/front-contact";
 
 export default async function Home() {
   const allHeros = await getAllHeros();
@@ -25,6 +26,7 @@ export default async function Home() {
         <CommunitySection />
         <WorkForUs />
       </div>
+      <FrontContact />
     </>
   );
 }
