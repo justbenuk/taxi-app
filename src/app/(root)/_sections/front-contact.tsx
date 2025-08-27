@@ -1,6 +1,6 @@
 import PageContainer from "@/components/shared/page-container";
 import ContactForm from "@/forms/contacts/contact-form";
-import { IconCoinPound, IconMail, IconPhone, IconPhoneRinging } from "@tabler/icons-react";
+import { IconCoinPound, IconMail, IconPhoneRinging } from "@tabler/icons-react";
 import React from "react";
 
 export default function FrontContact() {

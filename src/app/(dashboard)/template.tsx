@@ -1,11 +1,11 @@
-import { isAdmin } from "@/actions/auth-actions";
+import { isLoggedIn } from "@/actions/auth-actions";
 import SiteSidebarHeader from "@/components/header/admin-sidebar-header";
 import AdminSidebar from "@/components/sidebars/admin_sidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { PageLayoutProps } from "@/types";
 
 export default async function AdminTemplate({ children }: PageLayoutProps) {
-  await isAdmin();
+  await isLoggedIn();
   return (
     <SidebarProvider
       style={
@@ -17,7 +17,7 @@ export default async function AdminTemplate({ children }: PageLayoutProps) {
     >
       <AdminSidebar variant="inset" />
       <SidebarInset>
-        <SiteSidebarHeader title="Admin" />
+        <SiteSidebarHeader title="Dashboard" />
         <div className="p-6">{children}</div>
       </SidebarInset>
     </SidebarProvider>

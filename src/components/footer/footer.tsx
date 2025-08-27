@@ -37,7 +37,7 @@ export default function Footer() {
           <nav className="flex flex-row items-center space-x-4">
             <Link href={"/"}>Terms & Conditions</Link>
             <Link href={"/"}>Privacy</Link>
-            <Link href={"/"}>Login</Link>
+            <Link href={"/login"}>Login</Link>
           </nav>
         </div>
       </PageContainer>
