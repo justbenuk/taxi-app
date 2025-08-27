@@ -16,7 +16,7 @@ export default function CommunitySection() {
           you can find everything you need below
         </p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-10 mt-10 mb-20">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 xl:gap-10 mt-10 mb-10">
         {POSTLIST.map((post) => (
           <Card key={post.id} className="bg-muted">
             <CardHeader>
@@ -26,7 +26,7 @@ export default function CommunitySection() {
               <div>
                 <Image src={post.image} alt={post.title} width={400} height={400} className="rounded-xl h-[250px] w-full" />
               </div>
-              <div className="mt-4">{post.content.slice(0, 200)}...</div>
+              <div className="mt-4">{post.content.slice(0, 100)}...</div>
             </CardContent>
             <CardFooter>
               <div className="flex flex-row justify-between items-center w-full">

@@ -8,9 +8,9 @@ export default function FrontContact() {
     <div style={{ backgroundImage: `url('/assets/map.png')`, backgroundPosition: "center", backgroundSize: "cover" }}>
       <div className="bg-black/80 py-36 text-white">
         <PageContainer className="flex flex-col justify-center h-full">
-          <div className="grid grid-cols-1 lg:grid-cols-2 bg-black/80 p-12 rounded-xl">
+          <div className="grid grid-cols-1 lg:grid-cols-2 bg-black/80 p-6 lg:p-12 rounded-xl">
             <div className="flex flex-col justify-center">
-              <div className="lg:w-2/3">
+              <div className="text-center lg:text-start lg:w-2/3">
                 <h3 className="uppercase font-semibold text-yellow-500 dark:text-yellow-300">Contact Us</h3>
                 <h1 className="text-3xl font-semibold">More ways to contact us.</h1>
                 <p>Our offices are open 24 hours a day, with fully trained staff waiting to take your call.</p>

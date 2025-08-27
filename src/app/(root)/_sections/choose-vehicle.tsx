@@ -11,7 +11,7 @@ export default function ChooseVehicle() {
         <h1 className="uppercase font-semibold text-yellow-500 dark:text-yellow-300">Services</h1>
         <p className="text-4xl">Choose a vehicle that suits your needs</p>
       </div>
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-x-30 gap-y-10 mt-20">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 xl:gap-x-30 gap-y-10 mt-20">
         <Card>
           <CardContent className="flex flex-col justify-between space-y-4">
             <Image src={"/assets/skoda.png"} alt="skoda" height={400} width={400} className="pb-6" />

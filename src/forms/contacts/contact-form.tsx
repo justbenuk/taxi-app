@@ -31,7 +31,7 @@ export default function ContactForm() {
   return (
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)}>
-        <div className="grid gap-6 p-6">
+        <div className="grid gap-6 py-6">
           <div className="grid gap-3">
             <FormField
               control={form.control}
@@ -40,7 +40,7 @@ export default function ContactForm() {
                 <FormItem>
                   <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input {...field} />
+                    <Input {...field} className="border-none" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -55,7 +55,7 @@ export default function ContactForm() {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input {...field} />
+                    <Input {...field} className="border-none" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -70,7 +70,7 @@ export default function ContactForm() {
                 <FormItem>
                   <FormLabel>Phone</FormLabel>
                   <FormControl>
-                    <Input {...field} />
+                    <Input {...field} className="border-none" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -85,14 +85,14 @@ export default function ContactForm() {
                 <FormItem>
                   <FormLabel>Message</FormLabel>
                   <FormControl>
-                    <Textarea {...field} />
+                    <Textarea {...field} className="border-none" />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
               )}
             />
           </div>
-          <div className="flex flex-row justify-end">
+          <div className="flex flex-row justify-center lg:justify-end">
             <Button type="submit" variant={"default"} size={"lg"} className="shadow-xl bg-yellow-500 dark:bg-yellow-300 text-gray-900 font-semibold">
               Send Message
             </Button>

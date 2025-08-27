@@ -1,3 +1,4 @@
+import MobileMenu from "../menus/mobile-menu";
 import SiteMenuList from "../menus/site-menu-list";
 import PageContainer from "../shared/page-container";
 import SiteLogo from "../shared/site-logo";
@@ -9,6 +10,7 @@ export default function Header() {
         <div className="flex flex-row items-center justify-between">
           <SiteLogo />
           <SiteMenuList />
+          <MobileMenu />
         </div>
       </PageContainer>
     </header>
