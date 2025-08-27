@@ -7,7 +7,6 @@ import { hashSync } from "bcrypt-ts-edge";
 import { signOut } from "next-auth/react";
 import { revalidatePath } from "next/cache";
 import { isRedirectError } from "next/dist/client/components/redirect-error";
-import { redirect } from "next/navigation";
 import z from "zod";
 
 export async function registerUserAction(data: z.infer<typeof RegisterUserSchema>) {
@@ -63,18 +62,8 @@ export async function logoutUserAction() {
   await signOut();
 }
 
-export async function isLoggedIn() {
-  //get the current users session
-  const session = await auth();
-
-  //if there is no session return out
-  if (!session) {
-    redirect("/login");
-  }
-  return null;
-}
-
 export async function isAdmin() {
   const session = await auth();
-  if (!session) redirect("/login");
+  if (session?.user.role === "admin") return true;
+  return null;
 }

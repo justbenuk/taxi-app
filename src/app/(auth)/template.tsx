@@ -1,10 +1,9 @@
-import { isLoggedIn } from "@/actions/auth-actions";
+import { auth } from "@/auth";
 import { TemplateLayoutProps } from "@/types";
+import { redirect } from "next/navigation";
 
 export default async function AuthTemplate({ children }: TemplateLayoutProps) {
-  await isLoggedIn()
-  return (
-    <>{children}</>
-  )
+  const session = await auth();
+  if (session) redirect("/dashboard");
+  return <>{children}</>;
 }
-

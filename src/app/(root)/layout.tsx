@@ -4,9 +4,9 @@ import { RootLayoutProps } from "@/types";
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <div>
+    <div className="min-h-screen flex flex-col justify-between">
       <Header />
-      <div>{children}</div>
+      <div className="flex-1 mt-10">{children}</div>
       <Footer />
     </div>
   );

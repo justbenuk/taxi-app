@@ -68,22 +68,6 @@ export const config = {
       }
       return token;
     },
-    // eslint-disable-next-line
-    authorized({ request, auth }: any) {
-      //protecting routes
-      const protectedPaths = [
-        /\/shipping-address/,
-        /\/payment-method/,
-        /\/place-order/,
-        /\/user\/(.*)/,
-        /\/order\/(.*)/,
-        /\/admin/,
-      ];
-
-      //get the pathname from the request url object
-      const pathname = request.nextUrl;
-      if (!auth && protectedPaths.some((p) => p.test(pathname))) return false;
-    },
   },
 } satisfies NextAuthConfig
 export const { handlers, auth, signIn, signOut } = NextAuth(config)

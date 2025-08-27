@@ -1,11 +1,14 @@
-import { isLoggedIn } from "@/actions/auth-actions";
+import { auth } from "@/auth";
 import SiteSidebarHeader from "@/components/header/admin-sidebar-header";
-import AdminSidebar from "@/components/sidebars/admin_sidebar";
+import DashboardSidebar from "@/components/sidebars/dashboard-sidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 import { PageLayoutProps } from "@/types";
+import { redirect } from "next/navigation";
 
 export default async function AdminTemplate({ children }: PageLayoutProps) {
-  await isLoggedIn();
+  const session = await auth()
+  if (!session) redirect('/login')
+
   return (
     <SidebarProvider
       style={
@@ -15,7 +18,7 @@ export default async function AdminTemplate({ children }: PageLayoutProps) {
         } as React.CSSProperties
       }
     >
-      <AdminSidebar variant="inset" />
+      <DashboardSidebar variant="inset" />
       <SidebarInset>
         <SiteSidebarHeader title="Dashboard" />
         <div className="p-6">{children}</div>

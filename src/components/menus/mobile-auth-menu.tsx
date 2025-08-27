@@ -54,14 +54,6 @@ export default function MobileAuthMenu() {
               Dashboard
             </DropdownMenuItem>
           </Link>
-          {session.user?.role === "admin" && (
-            <Link href={"/admin/"}>
-              <DropdownMenuItem>
-                <IconCreditCard />
-                Admin Dashboard
-              </DropdownMenuItem>
-            </Link>
-          )}
         </DropdownMenuGroup>
         <DropdownMenuSeparator />
         <MobileLogoutForm />
