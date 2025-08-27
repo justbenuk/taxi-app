@@ -7,7 +7,6 @@ import HeaderAuth from "./header-auth";
 
 export default async function SiteMenuList() {
   const session = await auth();
-  if (!session) return null;
   return (
     <nav className="hidden lg:flex flex-row items-center gap-6 font-semibold">
       {SITEMENULIST.map((item, idx) => (
