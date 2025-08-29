@@ -7,7 +7,7 @@ import { IconBrandFacebook, IconBrandLinkedin, IconBrandTiktok, IconBrandX } fro
 export default function Footer() {
   const copyDate = new Date().getFullYear();
   return (
-    <div className="bg-muted dark:bg-neutral-900/20">
+    <div className="bg-neutral-950 text-white dark:bg-neutral-900/20">
       <PageContainer className="pt-20">
         <div className="flex flex-col lg:flex-row justify-between gap-10 pb-20">
           <div className="flex-1">

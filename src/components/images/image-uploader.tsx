@@ -10,21 +10,19 @@ type UploadImageProps = {
 
 export default function ImageUploader({ onImageUploadAction }: UploadImageProps) {
   return (
-    <main className="flex flex-col items-center justify-between p-24">
-      <UploadButton
-        endpoint="imageUploader"
-        onClientUploadComplete={async (res) => {
-          // Do something with the response
-          await ImageUploadAction(res[0])
-          onImageUploadAction(res[0].ufsUrl)
+    <UploadButton
+      endpoint="imageUploader"
+      onClientUploadComplete={async (res) => {
+        // Do something with the response
+        await ImageUploadAction(res[0])
+        onImageUploadAction(res[0].ufsUrl)
 
-        }}
-        onUploadError={(error: Error) => {
-          // Do something with the error.
-          console.error(error)
-          toast.error('Failed to upload image')
-        }}
-      />
-    </main>
+      }}
+      onUploadError={(error: Error) => {
+        // Do something with the error.
+        console.error(error)
+        toast.error('Failed to upload image')
+      }}
+    />
   );
 }

@@ -53,7 +53,7 @@ export async function loginUserAction(data: z.infer<typeof LoginUserSchema>) {
     return { success: true, message: "User Logged In" };
   } catch (error) {
     if (isRedirectError(error)) throw error;
-    return { success: false, message: "Sorry! Something went wrong" };
+    return { success: false, message: "Email or password are incorrect" };
   }
 }
 
